@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Greater of 3 number" icon-name="standard:budget">
+        <lightning-input label="Enter first number" onchange={firstNum}></lightning-input>
+        <lightning-input label="Enter Second number" onchange={secondNum}></lightning-input>
+        <lightning-input label="Enter Third number" onchange={thirdNum}></lightning-input>
+        <lightning-button-group>
+            <lightning-button label="Calculate" onclick={findGreaterNumber}></lightning-button>
+            <lightning-button label="Clear" onclick={clear}></lightning-button>
+        </lightning-button-group>
+    </lightning-card>
+</template>

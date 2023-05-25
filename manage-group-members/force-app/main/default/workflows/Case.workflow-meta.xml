@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Alert_notifying_support_agents_of_new_case_at_large_account</fullName>
+        <ccEmails>ash72900@gmail.com</ccEmails>
+        <description>Email Alert notifying support agents of new case at large account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ada.balewa@ursamajorsolarak100422.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Notification_of_New_Case_for_Large_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>First_Response_due_in_10_mins</fullName>
+        <description>First Response due in 10 mins!</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>CustomerSupportInternational</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/First_Response_due_in_10_min</template>
+    </alerts>
+    <alerts>
+        <fullName>Warning_email</fullName>
+        <description>Warning email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/SupportEscalatedCaseNotification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>ChangePriorityToHigh</fullName>
+        <field>Priority</field>
+        <literalValue>High</literalValue>
+        <name>Changes the case priority to high.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <tasks>
+        <fullName>Contact_the_customer</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Case.SlaStartDate</offsetFromField>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Contact the customer</subject>
+    </tasks>
+</Workflow>
