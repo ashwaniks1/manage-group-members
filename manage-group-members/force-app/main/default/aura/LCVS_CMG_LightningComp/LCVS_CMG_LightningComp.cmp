@@ -1,7 +1,0 @@
-<aura:component>
-    <lightning:card title = "Lightning Component created from VS Code" iconName = "standard:account">
-        <lightning:button label="Submit" onclick="{!c.callme}">
-            
-        </lightning:button>
-    </lightning:card>
-</aura:component>

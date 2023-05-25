@@ -1,8 +1,0 @@
-<aura:component>
-    <aura:attribute name="item" type="Camping_Item__c" required="true">
-        <p>Details:
-            <lightning:formattedText name="{!v.item.Name}" />
-        
-        </p>
-    </aura:attribute>
-</aura:component>
